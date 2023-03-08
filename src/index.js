@@ -1,9 +1,15 @@
 import "./index.html";
-import "./index.css";
+import "./index.scss";
+import { calcSumNumbers, calcSubtractNumbers } from "./modules/calc";
+import { Elements } from "./modules/elements";
 
-const calcSumNumbers = (a, b) => a + b;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const sumNumbers = calcSumNumbers(2, 3);
-  console.log(sumNumbers);
+  console.log(calcSubtractNumbers(10, 5));
+  console.log(calcSumNumbers(10, 5));
+  const elements = new Elements();
+  elements.addElement('element 1');
+  elements.addElement('element 2');
+  elements.addElement('element 3');
+  console.log(elements);
 });
