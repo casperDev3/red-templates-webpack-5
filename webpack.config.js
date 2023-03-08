@@ -18,7 +18,9 @@ module.exports = {
         open: true,
         hot: true,
     },
-    entry: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.js')],
+    entry: {
+        app: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.js')]
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
@@ -29,8 +31,17 @@ module.exports = {
         new HtmlWebpackPlugin(
             {
                 template: path.resolve(__dirname, 'src', 'index.html'),
+                filename: 'index.html',
             }
         ),
+        // new HtmlWebpackPlugin(
+        //     {
+        //         // for all html files in pages folder
+        //         template: path.resolve(__dirname, 'src', 'pages', '*.html'),
+        //         filename: 'pages/[name].html',
+        //         chunks: ['app']
+        //     }
+        // ),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         })
@@ -42,7 +53,33 @@ module.exports = {
                 loader: 'html-loader',
             },
             {
-                test: /\.(c|sa|sc)ss$/i,             
+                test: /\.html$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'pages/[name].[ext]',
+                        }
+                    }
+                ],
+                exclude: [path.resolve(__dirname, 'src', 'index.html'),
+                path.resolve(__dirname, 'src', 'components', '*.html')]
+            },
+            // {
+            //     test: /\.html$/i,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: 'components/[name].[ext]',
+            //             }
+            //         }
+            //     ],
+            //     exclude: [path.resolve(__dirname, 'src', 'index.html'),
+            //     path.resolve(__dirname, 'src', 'pages', '*.html')]
+            // },
+            {
+                test: /\.(c|sa|sc)ss$/i,
                 use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                 {
