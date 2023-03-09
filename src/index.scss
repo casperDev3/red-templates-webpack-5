@@ -6,6 +6,7 @@
 @import 'style/global/mixins';
 
 // Local styles for pages and components
+@import url('./style/pages/_about.scss');
 
 body{
     background-color: $primary-color;

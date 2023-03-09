@@ -19,12 +19,13 @@ module.exports = {
         hot: true,
     },
     entry: {
-        app: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.js')]
+        main: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.js')]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        filename: '[name].[contenthash].js',
+        // filename: '[name].[contenthash].js',
+        filename: 'scripts/[name].js',
         assetModuleFilename: 'assets/images/[name][ext]'
     },
     plugins: [
@@ -43,7 +44,8 @@ module.exports = {
         //     }
         // ),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            // filename: '[name].[contenthash].css'
+            filename: 'styles/[name].css'
         })
     ],
     module: {
