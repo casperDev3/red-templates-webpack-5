@@ -65,7 +65,8 @@ module.exports = {
                     }
                 ],
                 exclude: [path.resolve(__dirname, 'src', 'index.html'),
-                path.resolve(__dirname, 'src', 'components', '*.html')]
+                path.resolve(__dirname, 'src', 'components', '*.html')],
+                chunks: ['main']
             },
             // {
             //     test: /\.html$/i,
