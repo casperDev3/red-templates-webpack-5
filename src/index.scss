@@ -1,26 +1,17 @@
 // Import libraries css
-
+@import url('./style/libs/bootstrap.min.css');
+// @import './style/libs/font-awesome.min.css';
 // Global styles for the app
 @import 'style/global/fonts';
 @import 'style/global/variables';
 @import 'style/global/mixins';
 
 // Local styles for pages and components
-@import url('./style/pages/_about.scss');
+@import './style/pages/about';
+@import './style/components/header';
 
-body{
-    background-color: $primary-color;
-    color: rgb(209, 239, 10);
-    h1{
-        font-family: 'Roboto', sans-serif;
-    }
-    .img{
-        background-image: url('./assets/img/test.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100%;
-        width: 300px;
-        min-height: 300px;
-    }
+.output-info{
+    font-size: 1.5rem;
+    color: #f00;
+    margin: 10px;
 }
