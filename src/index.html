@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            />
         <title>RED Template WebPack 5</title>
     </head>
     <body>
@@ -29,13 +33,15 @@
                                 placeholder="Прізвище">
 
                             <label class="mt-2" for="name">Імʼя</label>
-                            <input id="name" name="name" type="text" placeholder="Імʼя">
+                            <input id="name" name="name" type="text"
+                                placeholder="Імʼя">
 
                             <label class="mt-2" for="patronymic">По-батькові</label>
                             <input id="patronymic" name="patronymic" type="text"
                                 placeholder="По-батькові">
 
-                            <button id="btn" class="btn btn-danger mt-4" type="submit">+</button>
+                            <button id="btn" class="btn btn-danger mt-4"
+                                type="submit">+</button>
                         </form>
                     </div>
                 </div>
@@ -49,7 +55,70 @@
                     </div>
                 </div>
             </div>
+            <!-- Slider main container -->
+            <div class="test_slider">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h2>test 1</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Eum, deleniti voluptatem?
+                                Quaerat debitis, sed molestiae doloribus, nemo
+                                velit quis autem quod maiores, beatae tempora!
+                                Accusamus corrupti culpa eum obcaecati
+                                excepturi!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h2>test 1</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Eum, deleniti voluptatem?
+                                Quaerat debitis, sed molestiae doloribus, nemo
+                                velit quis autem quod maiores, beatae tempora!
+                                Accusamus corrupti culpa eum obcaecati
+                                excepturi!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h2>test 2</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Eum, deleniti voluptatem?
+                                Quaerat debitis, sed molestiae doloribus, nemo
+                                velit quis autem quod maiores, beatae tempora!
+                                Accusamus corrupti culpa eum obcaecati
+                                excepturi!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h2>test 3</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Eum, deleniti voluptatem?
+                                Quaerat debitis, sed molestiae doloribus, nemo
+                                velit quis autem quod maiores, beatae tempora!
+                                Accusamus corrupti culpa eum obcaecati
+                                excepturi!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
         </main>
+
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     </body>
 </html>
