@@ -1,6 +1,15 @@
 export class Products {
-  constructor(array) {
-    this.products = array;
+  #baseUrl = "https://fakestoreapi.com";
+  constructor() {
+    this.products = [];
+  }
+  async getAllProducts() {
+    const prod = await fetch(`${this.#baseUrl}/products`)
+      .then((res) => res.json())
+      .then((json) => {
+        return json;
+      });
+    return prod;
   }
   drawAllProducts() {
     // 1. Get the container
@@ -18,5 +27,15 @@ export class Products {
     });
     // 3. Draw the products
     document.querySelector("#products").innerHTML = html;
+  }
+  async createProduct(product) {
+    return await fetch(`${this.#baseUrl}/products`, {
+      method: "POST",
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        return json;
+      });
   }
 }

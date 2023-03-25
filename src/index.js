@@ -6,18 +6,17 @@ import "./scripts/watchers/_pages";
 import { Products } from "./scripts/modules/Products/Products";
 
 // Bisiness logic
-async function getAllProducts(baseUrl) {
-  const prod = await fetch(`${baseUrl}/products`)
-    .then((res) => res.json())
-    .then((json) => {
-      return json;
-    });
-  return prod;
-}
-const BASE_URL = "https://fakestoreapi.com";
-
 document.addEventListener("DOMContentLoaded", async () => {
-  const prod = await getAllProducts(BASE_URL);
-  let products = new Products(prod);
+  let products = new Products();
+  products.products = await products.getAllProducts();
   products.drawAllProducts();
+  console.log(
+    await products.createProduct({
+      title: "Test",
+      description: "Test",
+      price: 100,
+      category: "Test",
+      image: "Test",
+    })
+  );
 });
