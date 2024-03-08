@@ -1,6 +1,12 @@
-<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/main.css" />
 <main class="about">
-    <h2>
-        About
-    </h2>
+  <h2 id="data_area">About</h2>
+  <script>
+    const DATA = JSON.parse(localStorage.getItem("data"));
+    const { first_name, age } = DATA;
+    document.querySelector("#data_area").innerHTML = `
+        ${first_name}, ${age}
+        `;
+  </script>
+  <script src="@/scr/scripts/pages/about.js"></script>
 </main>
